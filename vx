@@ -16,8 +16,8 @@ git push origin feature-branch
 
 exp2 
 Exp 2 :
-mkdir docker-demo
-cd docker-demo
+mkdir docker
+cd docker
 
 create index.html file 
 
@@ -29,3 +29,11 @@ COPY index.html /usr/share/nginx/html/index.html
 docker build -t myweb:v1 .
 
 docker run -d -p 9090:80 myweb:v1
+
+
+
+
+
+
+exp3
+
