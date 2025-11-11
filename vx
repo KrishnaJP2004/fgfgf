@@ -1,0 +1,31 @@
+git init 
+git add .
+git commit -m "initial commit"
+git remote add origin https://github.com/manojmr23/ABC.git
+git push -u origin main. If this error occurs, use this command ( git branch -m main) and redo this push  command again  repit git push -u origin main
+
+git checkout -b feature-branch
+echo "Feature branch update" >> demo.txt
+git add .
+git commit -m "Added demo.txt for pull request test"
+git push origin feature-branch
+
+
+
+
+
+exp2 
+Exp 2 :
+mkdir docker-demo
+cd docker-demo
+
+create index.html file 
+
+create docker file 
+
+FROM nginx 
+COPY index.html /usr/share/nginx/html/index.html
+
+docker build -t myweb:v1 .
+
+docker run -d -p 9090:80 myweb:v1
