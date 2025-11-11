@@ -35,5 +35,39 @@ docker run -d -p 9090:80 myweb:v1
 
 
 
-exp3
+EXP 3:
+flask-docker-app/
+├── app.py
+├── requirements.txt
+└── Dockerfile
 
+app.py 
+
+from flask import Flask, render_template_string
+
+app = Flask(_name_)
+@app.route('/')
+def home():
+    return render_template_string("<h1>Welcome to the Flask Docker App!</h1>")
+if _name_ == '_main_':
+    app.run(host='0.0.0.0', port=5000)
+
+requirements.txt
+
+Flask==2.2.5
+
+
+Dockerfile
+
+FROM python:3.9-slim
+WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+COPY . .
+EXPOSE 5000
+CMD ["python", "app.py"]
+
+
+docker build -t flask-docker-app .
+
+docker run -p 5000:5000 flask-docker-app
